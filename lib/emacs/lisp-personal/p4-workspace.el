@@ -18,8 +18,8 @@
          (is-stb (string= type "stb"))
          (p4user (getenv "USER"))
          (p4port (if is-stb
-                     "sahfrg2:1666"   ; Nanterre
-                     "sahfrg2:1999")) ; Wijgmaal
+                     "sahfrg2.softathome.com:1666"   ; Nanterre
+                     "sahfrg2.softathome.com:1999")) ; Wijgmaal
          (p4client (if is-stb
                        (concat "WS_" p4user "_" client) ; WS_sah0146_pc32
                        (concat  p4user "_BS_" client)   ; sah0146_BS_pc32
