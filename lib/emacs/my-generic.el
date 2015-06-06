@@ -34,4 +34,6 @@
 (setq desktop-path '("~/.emacs.d/"))
 ;;(desktop-save-mode 1)
 
+(defalias 'list-buffers 'ibuffer)
+
 (provide 'my-generic)
