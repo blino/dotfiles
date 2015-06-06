@@ -1,5 +1,10 @@
 (require 'switch-to-buffer)
 
+; first reset p4 environment variable to avoid hangs/errors for other files
+; use 127.0.0.1 to avoid delays with slow DNS servers
+(setenv "P4PORT" "127.0.0.1:1666")
+(setenv "P4CLIENT")
+
 ; p4 environment variables
 (setq p4-workspaces-dir (concat (expand-file-name "~") "/dev/workspaces"))
 (defun set-p4-env ()
