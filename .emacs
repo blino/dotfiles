@@ -18,10 +18,13 @@
 (require 'vc-git)
 (require 'git)
 
+(require 'web-mode)
+
 ;; Personal customizations
 (require 'my-generic)
 (require 'my-c)
 (require 'my-whitespace)
 (require 'my-diff)
 (require 'my-perl)
+(require 'my-web)
 (require 'p4-workspace)
