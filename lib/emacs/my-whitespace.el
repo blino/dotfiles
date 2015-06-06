@@ -8,4 +8,6 @@
 (add-hook 'cperl-mode-hook 'enable-show-trailing-whitespace)
 (add-hook 'makefile-mode-hook 'enable-show-trailing-whitespace)
 
+(require 'whitespace)
+
 (provide 'my-whitespace)
