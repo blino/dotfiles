@@ -19,6 +19,7 @@
 (require 'git)
 
 (require 'web-mode)
+(require 'markdown-mode)
 
 ;; Personal customizations
 (require 'my-generic)
