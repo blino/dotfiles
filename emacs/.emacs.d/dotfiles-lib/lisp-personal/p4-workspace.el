@@ -1,10 +1,5 @@
 (require 'switch-to-buffer)
 
-; first reset p4 environment variable to avoid hangs/errors for other files
-; use 127.0.0.1 to avoid delays with slow DNS servers
-(setenv "P4PORT" "127.0.0.1:1666")
-(setenv "P4CLIENT")
-
 ; p4 environment variables
 (setq p4-workspaces-dir (concat (expand-file-name "~") "/dev/workspaces"))
 (defun set-p4-env ()
@@ -12,7 +7,7 @@
   ; this assumes a certain formalism in the workspace path
   ;   /home/sah0146/dev/workspaces/pc32/hgw/ (Wijgmaal sah0146_BS_pc32)
   ;   /home/sah0146/dev/workspaces/pc32/stb/ (Nanterre WS_sah0146_pc32)
-  (when (and buffer-file-name
+  (if (and buffer-file-name
              (string-prefix-p p4-workspaces-dir buffer-file-name))
     (let*
         (
@@ -33,7 +28,14 @@
       (message (format "Applying P4 env %s / %s" p4port p4client))
       (setenv "P4PORT" p4port)
       (setenv "P4CLIENT" p4client)
+      )
+    (progn
+      ; reset p4 environment variable to avoid hangs/errors for other files
+      ; use 127.0.0.1 to avoid delays with slow DNS servers
+      (setenv "P4PORT" "127.0.0.1:1666")
+      (setenv "P4CLIENT")
       )))
+
 ; apply p4 env when opening a new buffer (before p4 hook
 ; and when switching to a buffer
 (add-hook 'change-major-mode-after-body-hook 'set-p4-env)
