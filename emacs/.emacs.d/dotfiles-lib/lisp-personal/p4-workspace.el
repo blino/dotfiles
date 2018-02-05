@@ -20,7 +20,7 @@
          (path-components (split-string extra-path "/" t))
          (client (pop path-components))
          (type (pop path-components))
-         (is-stb (string= type "stb"))
+         (is-stb (member type '("stb" "n1")))
          (p4user (getenv "USER"))
          (p4port (if is-stb
                      "sahfrg2.softathome.com:1666"   ; Nanterre
