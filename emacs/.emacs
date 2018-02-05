@@ -4,7 +4,7 @@
 ;; Enable a backtrace when problems occur
 ;; (setq debug-on-error t)
 
-(setq emacs-lib-dir (expand-file-name "~/vc/github/blino/dotfiles/lib/emacs"))
+(setq emacs-lib-dir (expand-file-name "~/.emacs.d/dotfiles-lib"))
 
 ;; Load paths
 (add-to-list 'load-path emacs-lib-dir)
