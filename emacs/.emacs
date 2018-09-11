@@ -10,13 +10,11 @@
 (add-to-list 'load-path emacs-lib-dir)
 (add-to-list 'load-path (concat emacs-lib-dir "/lisp"))
 (add-to-list 'load-path (concat emacs-lib-dir "/lisp-personal"))
-;(add-to-list 'load-path "/usr/share/git-core/emacs")
 
 ;; p4 support from http://public.perforce.com/wiki/Emacs_VC-P4
 (require 'vc-p4)
 
 (require 'vc-git)
-(require 'git)
 
 (require 'web-mode)
 (require 'markdown-mode)
